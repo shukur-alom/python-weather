@@ -1,6 +1,5 @@
 
 import requests,time
-from pushbullet import Pushbullet
 while 1:
   res = requests.get("http://api.openweathermap.org/data/2.5/weather?q=Hajiganj,Chandpur&appid=aa46358ed9ccd49917b50e5b1bd95f59")
   data = res.json()
@@ -42,7 +41,4 @@ while 1:
   data_send = f"https://maker.ifttt.com/trigger/weather4/with/key/pdaiwcfFUNi6P4q-m667WK6uXt18A_KkzoAqAjnGP7u?value1={wind_speed}&value2={wind_flow_deg}&value3={wind_gust_ms}"
   requests.get(data_send)
 
-  api = "o.zwGvl5OXibqDbrZ9saWhpXRvoXevJvMH"
-  pb = Pushbullet(api)
-  pust = pb.push_note("Hajiganj Weather Data", "Send Ok")
   time.sleep(1800)
